@@ -52,7 +52,7 @@ def create_response(key, value):
 
 def validate_keys(json):
     """Check if json has the right keys, convert array values to non-array, return errors."""
-    token = os.environ['token']  # optional token in env is used
+    token = os.environ.get('token', None)  # optional token in env is used
     if token:
         json['token'] = token
 
